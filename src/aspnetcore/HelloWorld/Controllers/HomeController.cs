@@ -12,6 +12,7 @@ namespace helloworld.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        const string _helloWorld = "Hello World";
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,6 +21,8 @@ namespace helloworld.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Msg = _helloWorld;
+            
             return View();
         }
 
