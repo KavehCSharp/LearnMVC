@@ -1,0 +1,14 @@
+﻿@model string[]
+
+@{
+    ViewData["Title"] = "Errors";
+}
+
+<table class="table table-striped">
+    @foreach (string e in Model.Reverse())
+    {
+        <tr>
+            <td>@Html.Raw(e)</td>
+        </tr>
+    }
+</table>

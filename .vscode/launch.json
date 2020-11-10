@@ -11,7 +11,7 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/src/aspnetcore/HelloWorld/bin/Debug/netcoreapp3.1/helloworld.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/aspnetcore/HelloWorld",
+            "cwd": "${workspaceFolder}/src/aspnetcore/CrudRepository",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",

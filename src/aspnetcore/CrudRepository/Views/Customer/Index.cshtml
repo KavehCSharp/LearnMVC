@@ -1,0 +1,58 @@
+﻿@model Customer[]
+
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<h1>@Model.Count() Customer
+    @if(Model.Count()>0)
+    {
+    <span>, </span><a class="btn btn-primary" asp-controller="Customers" asp-action="Add">Add</a>
+    }
+</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Firstname
+            </th>
+             <th>
+                Lastname
+            </th>
+             <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (Customer c in Model)
+    {
+        <tr>
+            <td>@c.Id.ToString().Substring(0, 5)<span>...</span></td>
+            <td>@c.Firstname</td>
+            <td>@c.Lastname</td>
+            <td>@c.Email</td>
+            <td style="text-align: right">
+                <a class="btn btn-primary" asp-controller="Customers" asp-action="Edit" asp-route-id="@c.Id">Edit</a>
+                <a class="btn btn-danger" asp-controller="Customers" asp-action="Delete" asp-route-id="@c.Id">Remove</a>
+            </td>
+        </tr>
+    }
+
+    @if(Model.Count()==0)
+    {
+        <tr>
+            <td class="text-center" colspan="5" style="padding: 20px 0;">
+                <a class="btn btn-primary" asp-controller="Customers" asp-action="Add">Add First Customer</a>
+                
+            </td>
+        </tr>
+
+    }
+
+</table>
