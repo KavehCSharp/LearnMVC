@@ -23,5 +23,5 @@
 
 
 ## نکات مهم
-در CustomerRepository.cs از DbContext استفاده شده است. در آینده به آسانی می توانید با نسخه Generic تعویض کنید.
-در Startup.cs از UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking) استفاده شده است.
+- در CustomerRepository.cs از DbContext استفاده شده است. در آینده به آسانی می توانید با نسخه Generic تعویض کنید.
+- در Startup.cs از UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking) استفاده شده است.
