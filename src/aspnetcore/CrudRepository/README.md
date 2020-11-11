@@ -1,5 +1,8 @@
 <div dir='rtl'>
 
+# Demo
+[Demo](https://crudrepository.herokuapp.com/)
+
 # CRUD Repository
 مثال برای همه موارد زیر
 - Asp.Net Core MVC
@@ -14,6 +17,6 @@
 
 ## Install
 متناسب با دیتابیس یکی را نصب کنید
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-dotnet add package Microsoft.EntityFrameworkCore.InMemory
-dotnet add package Microsoft.EntityFrameworkCore.SQLite
+- dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+- dotnet add package Microsoft.EntityFrameworkCore.InMemory
+- dotnet add package Microsoft.EntityFrameworkCore.SQLite
