@@ -2,41 +2,43 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/src/aspnetcore/HelloWorld/helloworld.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+            "type": "docker-build",
+            "label": "docker-build: release",
+            "dependsOn": [
+                "build"
             ],
-            "problemMatcher": "$msCompile"
+            "dockerBuild": {
+                "tag": "learnmvc:latest",
+                "dockerfile": "${workspaceFolder}/src/aspnetcore/CrudRepository/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/src/aspnetcore/CrudRepository/CrudRepository.csproj"
+            }
         },
         {
-            "label": "publish",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "publish",
-                "${workspaceFolder}/src/aspnetcore/HelloWorld/helloworld.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+            "type": "docker-run",
+            "label": "docker-run: debug",
+            "dependsOn": [
+                "docker-build: debug"
             ],
-            "problemMatcher": "$msCompile"
+            "dockerRun": {},
+            "netCore": {
+                "appProject": "${workspaceFolder}/src/aspnetcore/CrudRepository/CrudRepository.csproj",
+                "enableDebugging": true
+            }
         },
         {
-            "label": "watch",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "watch",
-                "run",
-                "${workspaceFolder}/src/aspnetcore/HelloWorld/helloworld.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+            "type": "docker-run",
+            "label": "docker-run: release",
+            "dependsOn": [
+                "docker-build: release"
             ],
-            "problemMatcher": "$msCompile"
+            "dockerRun": {},
+            "netCore": {
+                "appProject": "${workspaceFolder}/src/aspnetcore/CrudRepository/CrudRepository.csproj"
+            }
         }
     ]
 }

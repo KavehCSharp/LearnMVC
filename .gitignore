@@ -23,6 +23,7 @@ StyleCopReport.xml
 *.dotCover
 *.coverage
 *.coveragexml
+*.cache
 
 # Package folders
 [Pp]ackages/
