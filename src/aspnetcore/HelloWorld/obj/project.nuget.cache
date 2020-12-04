@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jE8Lao78ySNYhj0CIOPVKCYa9pu+cFhk5sbSezOlR0Ndt9OvI4JmmDwrmkbvCRGx1c4E+xKWRGcT4FaAqxq2fQ==",
+  "dgSpecHash": "YNHs0/jJVVVKfCZpHsGQJtrEDtJlHYnPrLHJmzBNmytsAEnPs1SDY7aY1fAzOP1KYcY/b5nkp1S188n1mqJJaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\HelloWorld\\helloworld.csproj",
+  "projectFilePath": "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\helloworld\\helloworld.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

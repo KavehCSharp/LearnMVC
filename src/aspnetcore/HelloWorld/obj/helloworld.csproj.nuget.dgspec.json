@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\HelloWorld\\helloworld.csproj": {}
+    "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\helloworld\\helloworld.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\HelloWorld\\helloworld.csproj": {
+    "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\helloworld\\helloworld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\HelloWorld\\helloworld.csproj",
+        "projectUniqueName": "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\helloworld\\helloworld.csproj",
         "projectName": "helloworld",
-        "projectPath": "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\HelloWorld\\helloworld.csproj",
+        "projectPath": "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\helloworld\\helloworld.csproj",
         "packagesPath": "C:\\Users\\Kaveh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\HelloWorld\\obj\\",
+        "outputPath": "C:\\Users\\Kaveh\\Documents\\GitHub\\LearnMVC\\src\\aspnetcore\\helloworld\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kaveh\\AppData\\Roaming\\NuGet\\NuGet.Config"
