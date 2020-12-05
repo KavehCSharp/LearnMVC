@@ -20,6 +20,6 @@
 
 ## Install
 متناسب با دیتابیس یکی را نصب کنید
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-dotnet add package Microsoft.EntityFrameworkCore.InMemory (default)
-dotnet add package Microsoft.EntityFrameworkCore.SQLite
+- dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+- dotnet add package Microsoft.EntityFrameworkCore.InMemory (default)
+- dotnet add package Microsoft.EntityFrameworkCore.SQLite
