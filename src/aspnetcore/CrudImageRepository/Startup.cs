@@ -37,7 +37,10 @@ namespace CrudImageRepository
             
             services.AddTransient<IValidator<UserViewModel>, UserViewModelValidator>();
 
-            services.AddDbContext<MyDbContext>(o => o.UseInMemoryDatabase(databaseName: "mydb")
+            services.AddDbContext<MyDbContext>(o => 
+            o.UseInMemoryDatabase(databaseName: "mydb")
+            //o => o.UseSqlServer("connection-string-here"));
+
             .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
             services.AddScoped<DbContext, MyDbContext>();
