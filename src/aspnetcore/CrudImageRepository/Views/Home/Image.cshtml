@@ -1,0 +1,48 @@
+﻿@model ImageViewModel
+
+@{
+    ViewData["Title"] = $"User #{Model.Id} image";
+}
+
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, 
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x=>x.Id)
+
+    @if(!string.IsNullOrEmpty(Model.Image))
+    {
+        if(Model.IsImageStoreInDB)
+        {
+            <img src="data:image/jpeg;base64, @Model.Image" />   
+        }else
+        {
+            <img src="@Model.Image" />
+        }
+        <hr/>
+    }
+
+    <div>
+
+    @if(Model.IsInDocker)
+    {
+        <p>
+            <span class="badge badge-danger">Docker Hosting</span> my docker hosting has no space to upload files :)
+        </p>
+    }
+
+    <label class="checkbox">
+        @Html.CheckBoxFor(x=>x.IsImageStoreInDB, Model.IsInDocker?new { disabled=true }:null) 
+        <span>in DB(for Docker sample)?</span>
+    </label>
+    
+    <label>Please select jpeg file:</label>
+    <input type="file" name="file" id="file" /> 
+    <button type="submit" class="btn btn-primary">Upload</button>
+    @if(Model.Id!=0&&!string.IsNullOrEmpty(Model.Image))
+    {
+        <a class="btn btn-danger" asp-controller="Home" asp-action="DeleteImage" asp-route-id="@Model.Id">Remove Image</a>
+    }
+    <a asp-action="index" class="btn btn-default">Back</a>
+    </div>
+}

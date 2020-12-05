@@ -1,0 +1,67 @@
+﻿@model User[]
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>@Model.Count() User
+    @if(Model.Any())
+    {
+    <span>, </span><a class="btn btn-primary" asp-controller="Home" asp-action="Add">Add</a>
+    }
+</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Active?
+            </th>
+            <th>
+                Firstname
+            </th>
+             <th>
+                Lastname
+            </th>
+             <th>
+                City
+            </th>
+            <th>
+                Age
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (User u in Model)
+    {
+        <tr>
+            <td>@u.Id.ToString()</td>
+            <td>@u.IsActive</td>
+            <td>@u.Firstname</td>
+            <td>@u.Lastname</td>
+            <td>@u.City</td>
+            <td>@u.Age</td>
+            <td style="text-align: right">
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Edit" asp-route-id="@u.Id">Edit</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@u.Id">Remove</a>
+                <a class="btn btn-info" asp-controller="Home" asp-action="Image" asp-route-id="@u.Id">Image</a>
+            </td>
+        </tr>
+    }
+
+    @if(!Model.Any())
+    {
+        <tr>
+            <td class="text-center" colspan="7" style="padding: 20px 0;">
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Add">Add First User</a>
+                
+            </td>
+        </tr>
+
+    }
+
+</table>

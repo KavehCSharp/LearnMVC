@@ -1,0 +1,35 @@
+﻿@model UserViewModel
+
+@{
+    if(Model.Id==0)
+        ViewData["Title"] = $"New User";
+    else
+        ViewData["Title"] = $"User #{Model.Id} Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x=>x.Id)
+
+    @* for Summary 
+    @Html.ValidationSummary() *@
+
+    @Html.EditorFor(x=>x.Firstname)
+    @Html.EditorFor(x=>x.Lastname)
+    @Html.EditorFor(x=>x.City)
+    @Html.EditorFor(x=>x.Age)
+    @Html.EditorFor(x=>x.IsActive)
+
+    @* OR
+    @Html.EditorForModel() *@
+
+    <br/>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    @if(Model.Id!=0)
+    {
+        <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.Id">Remove</a>
+    }
+    <a asp-action="index" class="btn btn-default">Cancel</a>
+}
