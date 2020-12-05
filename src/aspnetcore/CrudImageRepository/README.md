@@ -16,6 +16,7 @@
 - FluentValidation
 - AutoMapper
 - DI in Asp.Net Core 3.1
+- Upload to folder (db as base64)
 
 ## Install
 متناسب با دیتابیس یکی را نصب کنید
